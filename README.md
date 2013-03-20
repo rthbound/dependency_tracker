@@ -13,7 +13,7 @@ Visit [localhost:3000/projects](http://localhost:3000/projects) and add a new pr
 - [x] Interface to add projects by name & path to gemset
 - [x] Search those gems for *LICENSE* files
 - [x] Build dependency models out of the gem's name and join them to the project
-- [x] Interface to flag dependencies as approved 
-- [ ] Tag dependencies with license info
-- [ ] Export csv
-- [ ] Import csv
+- [x] Interface to flag dependencies as approved
+- [ ] Tag dependencies with license info -unimplemented
+- [ ] Export csv -unimplemented
+- [ ] Import csv -unimplemented
