@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dependency.name %>
+</p>
+
+<p>
+  <b>License:</b>
+  <%= @dependency.license %>
+</p>
+
+<p>
+  <b>License description:</b>
+  <%= @dependency.license_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_dependency_path(@dependency) %> |
+<%= link_to 'Back', dependencies_path %>

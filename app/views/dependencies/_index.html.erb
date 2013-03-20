@@ -1,0 +1,30 @@
+<h1>Listing dependencies</h1>
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>Approve?</th>
+    <th>Name</th>
+    <th>License</th>
+    <th>Approved</th>
+    <th></th>
+  </tr>
+
+<% @project.dependencies.each do |dependency| %>
+  <tr>
+    <td><%= dependency.approved ? nil : button_to("Approve", controller: "dependencies", action: "approve", id: dependency.id, remote: true) %></td>
+    <td><%= dependency.name %></td>
+    <td><%= dependency.license %></td>
+    <td class="approved"><%= dependency.approved ? "Yes" : "No" %></td>
+    <td>
+      <%= link_to 'Show', dependency %> |
+      <%= link_to 'Edit', edit_dependency_path(dependency) %> |
+      <%= link_to 'Destroy', dependency, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dependency', new_dependency_path %>
+<%= javascript_include_tag("approve_dependencies") %>
