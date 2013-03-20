@@ -4,7 +4,7 @@ module UseCase
 
       # @find_licenses =  UseCase::DependenciesIndex::FindLicenses.new(find_class: @find_class, source: dep)
       def initialize(options)
-        load_options(:find_class, :source, options)
+        load_options(:find_class, :gem_source, options)
       end
 
       # @find_licenses.execute!
@@ -24,7 +24,7 @@ module UseCase
       def find_licenses_in_source
         license_files = []
 
-        @find_class.find(@source) do |path|
+        @find_class.find(@gem_source) do |path|
           license_files << path if path.include?("LICENSE")
         end
 

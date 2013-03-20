@@ -33,7 +33,7 @@ module UseCase
 
       # Given the path to a gem, find files with LICENSE in name
       def find_licenses_in_gem_source
-        license_finder = UseCase::DependenciesIndex::FindLicenses.new(find_class: @find_class, source: @gem_source)
+        license_finder = UseCase::DependenciesIndex::FindLicenses.new(find_class: @find_class, gem_source: @gem_source)
         license_finder_result = license_finder.execute!
 
         license_finder_result.data[:licenses]
