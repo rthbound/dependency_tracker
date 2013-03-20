@@ -14,6 +14,7 @@ Visit [localhost:3000/projects](http://localhost:3000/projects) and add a new pr
 - [x] Search those gems for *LICENSE* files
 - [x] Build dependency models out of the gem's name and join them to the project
 - [x] Interface to flag dependencies as approved
+- [ ] Parse markdown if the LICENSE contains is a *LICENSE*.md
 - [ ] Tag dependencies with license info -unimplemented
 - [ ] Export csv -unimplemented
 - [ ] Import csv -unimplemented
