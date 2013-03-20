@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  require "find"
+
   attr_accessible :gem_home, :name
 
   after_create :create_dependency_index
@@ -9,7 +11,7 @@ class Project < ActiveRecord::Base
   private
 
   def create_dependency_index
-    result = UseCase::DependenciesIndex::Create.new(project: self).execute!
+    result = UseCase::DependenciesIndex::Create.new(project: self, dependency_class: Dependency, find_class: Find, dir_class: Dir).execute!
 
     raise unless result.successful?
   end
