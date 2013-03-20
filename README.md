@@ -1,4 +1,4 @@
-Getting started:
+# Getting started:
 
     bundle
     cp config/database.yml.example.postgres config/database.yml
@@ -10,6 +10,10 @@ Getting started:
 Visit [localhost:3000/projects](http://localhost:3000/projects) and add a new project.
 (If you don't know the project's $GEM_HOME path, use `echo $GEM_HOME` from the project's root folder)
 
-Anticipated improvements:
-1) Provide easy interface for marking a dependency's license as "MIT", "GPL", "Apache", etc.
-2) Provide a csv export feature
+- [x] Interface to add projects by name & path to gemset
+- [x] Search those gems for *LICENSE* files
+- [x] Build dependency models out of the gem's name and join them to the project
+- [x] Interface to flag dependencies as approved 
+- [ ] Tag dependencies with license info
+- [ ] Export csv
+- [ ] Import csv
