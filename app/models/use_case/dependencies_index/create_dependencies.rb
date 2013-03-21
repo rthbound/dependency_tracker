@@ -11,7 +11,7 @@ module UseCase
         if @errors.empty?
           return UseCase::Result.new(data: { project: @project })
         else
-          return UseCase::Result.new(data: { licenses: @project }, errors: @errors)
+          return UseCase::Result.new(data: { project: @project }, errors: @errors)
         end
       end
 

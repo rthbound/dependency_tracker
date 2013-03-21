@@ -1,0 +1,24 @@
+%h1 Listing javascript_dependencies
+%h3="for #{@project.name}"
+
+%table
+  %tr
+    %th Name
+    %th License
+    %th License description
+    %th
+    %th
+    %th
+
+  - @javascript_dependencies.each do |javascript_dependency|
+    %tr
+      %td= javascript_dependency.name
+      %td= javascript_dependency.license
+      %td= javascript_dependency.license_description
+      %td= link_to 'Show', javascript_dependency
+      %td= link_to 'Edit', edit_javascript_dependency_path(javascript_dependency)
+      %td= link_to 'Destroy', javascript_dependency, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Javascript dependency', new_javascript_dependency_path

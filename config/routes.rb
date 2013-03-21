@@ -1,5 +1,11 @@
 ThisIsNotARailsApp::Application.routes.draw do
-  resources :projects
+
+  resources :javascript_dependencies
+
+  resources :projects do
+    resources :dependencies
+    resources :javascript_dependencies
+  end
 
 
   resources :dependencies

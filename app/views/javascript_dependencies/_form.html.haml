@@ -1,0 +1,19 @@
+= form_for @javascript_dependency do |f|
+  - if @javascript_dependency.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@javascript_dependency.errors.count, "error")} prohibited this javascript_dependency from being saved:"
+      %ul
+        - @javascript_dependency.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :license
+    = f.text_field :license
+  .field
+    = f.label :license_description
+    = f.text_field :license_description
+  .actions
+    = f.submit 'Save'

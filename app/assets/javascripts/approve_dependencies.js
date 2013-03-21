@@ -1,3 +1,6 @@
+/*
+  MIT License
+*/
 $(document).ready(function(){
   $("form.button_to").submit(function(){
     $(this).ajaxSubmit({

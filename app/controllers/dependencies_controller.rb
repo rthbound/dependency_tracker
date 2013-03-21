@@ -2,7 +2,8 @@ class DependenciesController < ApplicationController
   # GET /dependencies
   # GET /dependencies.json
   def index
-    @dependencies = Dependency.all
+    @project = Project.find(params[:project_id])
+    @dependencies = @project.dependencies
 
     respond_to do |format|
       format.html # index.html.erb

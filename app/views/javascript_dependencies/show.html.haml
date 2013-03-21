@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @javascript_dependency.name
+%p
+  %b License:
+  = @javascript_dependency.license
+%p
+  %b License description:
+  = @javascript_dependency.license_description
+
+= link_to 'Edit', edit_javascript_dependency_path(@javascript_dependency)
+\|
+= link_to 'Back', javascript_dependencies_path

@@ -11,9 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319210453) do
+ActiveRecord::Schema.define(:version => 20130321213437) do
 
   create_table "dependencies", :force => true do |t|
+    t.string   "name"
+    t.text     "license"
+    t.string   "license_description"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.boolean  "approved"
+  end
+
+  create_table "javascript_dependencies", :force => true do |t|
     t.string   "name"
     t.text     "license"
     t.string   "license_description"
@@ -29,11 +38,19 @@ ActiveRecord::Schema.define(:version => 20130319210453) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "project_javascript_dependencies", :force => true do |t|
+    t.integer  "javascript_dependency_id"
+    t.integer  "project_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "gem_home"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "root_path"
   end
 
 end
