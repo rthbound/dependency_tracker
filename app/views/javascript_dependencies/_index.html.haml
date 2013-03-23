@@ -1,0 +1,25 @@
+%h1 Listing javascript_dependencies
+%h3="for #{@project.name}"
+
+%table.table.table-striped.table-condensed
+  %tr
+    %th Approve?
+    %th Name
+    %th License
+    %th Approved
+    %th
+
+  - @project.javascript_dependencies.each do |javascript_dependency|
+    %tr
+      %td= javascript_dependency.approved ? nil : button_to("Approve", controller: "javascript_dependencies", action: "approve", id: javascript_dependency.id, remote: true)
+      %td= javascript_dependency.name
+      %td= javascript_dependency.license
+      %td.approved= javascript_dependency.approved ? "Yes" : "No"
+      %td
+        = link_to 'Show', javascript_dependency
+        = link_to 'Edit', edit_javascript_dependency_path(javascript_dependency)
+        = link_to 'Destroy', javascript_dependency, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Javascript dependency', new_javascript_dependency_path

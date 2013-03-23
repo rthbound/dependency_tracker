@@ -21,7 +21,7 @@ class Project < ActiveRecord::Base
   def create_js_dependency_index
     result = UseCase::JavascriptDependenciesIndex::Create.new({
       project: self,
-      dependency_class: Dependency,
+      dependency_class: JavascriptDependency,
       dependency_creator_class: UseCase::JavascriptDependenciesIndex::CreateJavascriptDependencies,
       file_class: File,
       dir_class: Dir

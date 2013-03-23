@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if defined? ENV['GEM_HOME']
-  Project.create(name: 'current $GEM_HOME', gem_home: ENV['GEM_HOME'])
+  Project.create(name: 'current $GEM_HOME', gem_home: ENV['GEM_HOME'], root_path: Rails.root)
 end

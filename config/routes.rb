@@ -11,6 +11,7 @@ ThisIsNotARailsApp::Application.routes.draw do
   resources :dependencies
 
   match 'dependencies/approve' => 'dependencies#approve', as: :approve_dependency
+  match 'javascript_dependencies/approve' => 'javascript_dependencies#approve', as: :approve_dependency
 
   root :to => 'projects#index'
 
