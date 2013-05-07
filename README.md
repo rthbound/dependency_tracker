@@ -1,4 +1,4 @@
-# The Story
+## The Story
 
 I was tasked with gathering a list of all the gem dependencies and javascript dependencies being used in each of
 my client's Rails applications. Obviously that's no task for a human, so I created this application to get the job done.
@@ -10,7 +10,17 @@ The application is really only useful in your development environment. It has tw
 
 If a dependency exists in multiple projects, you should only need to approve it in one for it to be listed as approved in the other projects.
 
-# Getting started:
+## Screenshots
+
+Here's a couple of screenshots to help you get the picture.
+
+The project index:
+![Project index page](https://raw.github.com/rthbound/dependency_tracker/master/screenshots/projects_index.png)
+
+The project show:
+![Project show page](https://raw.github.com/rthbound/dependency_tracker/master/screenshots/project_show.png)
+
+## Getting started:
 
     bundle
     cp config/database.yml.example.postgres config/database.yml
