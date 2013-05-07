@@ -1,4 +1,4 @@
-ThisIsNotARailsApp::Application.routes.draw do
+DependencyTracker::Application.routes.draw do
 
   resources :javascript_dependencies
 
