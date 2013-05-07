@@ -1,14 +1,28 @@
-## The Story
+### Purpose
 
-I was tasked with gathering a list of all the gem dependencies and javascript dependencies being used in each of
-my client's Rails applications. Obviously that's no task for a human, so I created this application to get the job done.
+* **dependency_tracker** provides an interface for viewing and
+approving dependencies based on the license agreements under which
+they have been released.
+* It provides a rake task for exporting all third party
+software dependencies and their associated license agreements as a *.csv
+file.
+* It makes it easy to spot software with unsatisfactory
+or missing licenses.
+* It will assume that if a dependency's licensing is deemed
+agreeable for one project, it will be agreeable in all projects. Saves you
+time wasted by considering the same thing repeatedly.
 
-The application is really only useful in your development environment. It has two primary functions:
+### Getting started:
 
-1. To provide a CSV export of all your projects' gem/js dependencies and their associated licenses.
-2. To provide an interface for "approving" dependencies.
+    bundle
+    cp config/database.yml.example.postgres config/database.yml
+    bundle exec rake db:create
+    bundle exec rake db:migrate
 
-If a dependency exists in multiple projects, you should only need to approve it in one for it to be listed as approved in the other projects.
+    bundle exec rails s
+
+Visit [localhost:3000/projects](http://localhost:3000/projects) and add a new project. You'll be asked
+to provide both the root path and gem home path for each dependency.
 
 ## Screenshots
 
@@ -19,26 +33,6 @@ The project index:
 
 The project show:
 ![Project show page](https://raw.github.com/rthbound/dependency_tracker/master/screenshots/project_show.png)
-
-## Getting started:
-
-    bundle
-    cp config/database.yml.example.postgres config/database.yml
-    bundle exec rake db:create
-    bundle exec rake db:migrate
-
-    bundle exec rails s
-
-Visit [localhost:3000/projects](http://localhost:3000/projects) and add a new project.
-(If you don't know a project's $GEM_HOME path, use `echo $GEM_HOME` from the project's root folder).
-
-- [x] Interface to add projects by name & path to gemset
-- [x] Search those gems for *LICENSE* files
-- [x] Build dependency models out of the gem's name and join them to the project
-- [x] Interface to flag dependencies as approved
-- [ ] Tag dependencies with license info -unimplemented
-- [x] Export csv -unimplemented
-
 # Contributing
 
 Please share any ideas you have that could make this project more useful. Issues and Pull Requests are more than welcome.
