@@ -1,3 +1,5 @@
+Do also check out [LicenseFinder](https://github.com/pivotal/LicenseFinder) from [pivotal](https://github.com/pivotal).
+
 ### Purpose
 
 * **dependency_tracker** provides an interface for viewing and
