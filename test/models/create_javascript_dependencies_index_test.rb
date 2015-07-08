@@ -1,7 +1,7 @@
 require File.expand_path('../../test_helper', __FILE__)
 require File.expand_path('../../../app/models/use_case', __FILE__)
 
-describe UseCase::DependenciesIndex::Create do
+describe UseCase::JavascriptDependenciesIndex::Create do
   describe "when executed" do
     before do
       @subject = UseCase::JavascriptDependenciesIndex::Create

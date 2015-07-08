@@ -7,7 +7,6 @@ gem 'pay_dirt'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'pry'
 
 gem 'minitest-rails'
 gem 'minitest-colorize'
