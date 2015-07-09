@@ -7,7 +7,7 @@ approving dependencies based on the license agreements under which
 they have been released.
 * It provides a rake task for exporting all third party
 software dependencies and their associated license agreements as a *.csv
-file.
+file. `rake dependencies:csv`
 * It makes it easy to spot software with unsatisfactory
 or missing licenses.
 * It will assume that if a dependency's licensing is deemed

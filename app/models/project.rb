@@ -1,8 +1,6 @@
 class Project < ActiveRecord::Base
   require "find"
 
-  attr_accessible :gem_home, :name, :root_path
-
   after_create :create_gem_dependency_index
   after_create :create_js_dependency_index
 
@@ -14,17 +12,23 @@ class Project < ActiveRecord::Base
   private
 
   def create_gem_dependency_index
-    result = UseCase::DependenciesIndex::Create.new(project: self, dependency_class: Dependency, find_class: Find, dir_class: Dir).execute!
+    result = UseCase::DependenciesIndex::Create.new({
+      project:          self,
+      dependency_class: Dependency,
+      find_class:       Find,
+      dir_class:        Dir
+    }).execute!
+
     raise unless result.successful?
   end
 
   def create_js_dependency_index
     result = UseCase::JavascriptDependenciesIndex::Create.new({
-      project: self,
-      dependency_class: JavascriptDependency,
+      project:                  self,
+      dependency_class:         JavascriptDependency,
       dependency_creator_class: UseCase::JavascriptDependenciesIndex::CreateJavascriptDependencies,
-      file_class: File,
-      dir_class: Dir
+      file_class:               File,
+      dir_class:                Dir
     }).execute!
 
     raise unless result.successful?

@@ -9,47 +9,50 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321213437) do
+ActiveRecord::Schema.define(version: 20130321213437) do
 
-  create_table "dependencies", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "dependencies", force: :cascade do |t|
     t.string   "name"
     t.text     "license"
     t.string   "license_description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "approved"
   end
 
-  create_table "javascript_dependencies", :force => true do |t|
+  create_table "javascript_dependencies", force: :cascade do |t|
     t.string   "name"
     t.text     "license"
     t.string   "license_description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "approved"
   end
 
-  create_table "project_dependencies", :force => true do |t|
+  create_table "project_dependencies", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "dependency_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "project_javascript_dependencies", :force => true do |t|
+  create_table "project_javascript_dependencies", force: :cascade do |t|
     t.integer  "javascript_dependency_id"
     t.integer  "project_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "projects", :force => true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "gem_home"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "root_path"
   end
 

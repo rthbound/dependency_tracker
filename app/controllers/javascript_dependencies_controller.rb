@@ -41,7 +41,7 @@ class JavascriptDependenciesController < ApplicationController
   # POST /javascript_dependencies
   # POST /javascript_dependencies.json
   def create
-    @javascript_dependency = JavascriptDependency.new(params[:javascript_dependency])
+    @javascript_dependency = JavascriptDependency.new(javascript_dependency_params)
 
     respond_to do |format|
       if @javascript_dependency.save
@@ -80,5 +80,10 @@ class JavascriptDependenciesController < ApplicationController
       format.html { redirect_to javascript_dependencies_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def javascript_dependency_params
+    params.require(:javascript_dependency).permit(:name, :license, :license_description)
   end
 end

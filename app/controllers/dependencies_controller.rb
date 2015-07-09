@@ -41,7 +41,7 @@ class DependenciesController < ApplicationController
   # POST /dependencies
   # POST /dependencies.json
   def create
-    @dependency = Dependency.new(params[:dependency])
+    @dependency = Dependency.new(dependency_params)
 
     respond_to do |format|
       if @dependency.save
@@ -60,7 +60,7 @@ class DependenciesController < ApplicationController
     @dependency = Dependency.find(params[:id])
 
     respond_to do |format|
-      if @dependency.update_attributes(params[:dependency])
+      if @dependency.update_attributes(dependency_params)
         format.html { redirect_to @dependency, notice: 'Dependency was successfully updated.' }
         format.json { head :no_content }
       else
@@ -88,5 +88,10 @@ class DependenciesController < ApplicationController
     @dependency.update_attribute(:approved, true)
 
     render nothing: true
+  end
+
+  private
+  def dependency_params
+    params.require(:dependency).permit(:name, :license, :license_description)
   end
 end
