@@ -9,4 +9,4 @@ rvm:
   - ruby-head
   - rbx
 
-script: bundle exec rake test
+script: cp config/database.yml.example.postgres config/database.yml; bundle exec rake test
