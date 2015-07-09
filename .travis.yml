@@ -7,4 +7,4 @@ rvm:
   - ruby-head
   - rbx
 
-script: cp config/database.yml.example.postgres config/database.yml; rake db:setup;bundle exec rake test
+script: cp config/database.yml.example.postgres config/database.yml; bundle exec rake db:setup;bundle exec rake test
