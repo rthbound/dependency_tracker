@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rthbound/dependency_tracker.svg)](https://travis-ci.org/rthbound/dependency_tracker)
+
 Do also check out [LicenseFinder](https://github.com/pivotal/LicenseFinder) from [pivotal](https://github.com/pivotal). They also have a SaaS version of their product in the works at [http://licenseaudit.pivotallabs.com/](http://licenseaudit.pivotallabs.com/).  If your projects are hosted on github, their tool may suffice.
 
 ### Purpose
