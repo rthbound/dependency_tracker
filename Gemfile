@@ -11,7 +11,6 @@ gem 'pg'
 
 group :test do
   gem 'minitest-rails'
-  gem 'minitest-colorize'
   gem 'minitest-reporters'
   gem 'minitest-matchers'
   gem 'mocha', require: false

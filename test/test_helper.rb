@@ -1,12 +1,10 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
-require 'minitest/spec'
 require "minitest/rails"
 require "minitest/autorun"
 require 'minitest/matchers'
 require 'minitest/reporters'
-require "minitest-colorize"
 require "mocha/setup"
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
